@@ -21,4 +21,6 @@ Route.get("/", () => {
 });
 
 // Threads
-Route.resource("threads", "ThreadController").only(["store", "destroy"]);
+Route.resource("threads", "ThreadController")
+  .only(["store", "destroy"])
+  .middleware("auth");
